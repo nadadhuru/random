@@ -1,0 +1,36 @@
+Ansible Roles:
+
+Ansible Galaxy - will be used to create roles
+It gives clean directory structure
+
+Command:	ansible-galaxy init /etc/ansible/roles/apache --offline [otherwise it will download available roles online]
+
+Folders/Directories:
+
+main.yml will be present in every directory
+default:	default variables
+files:		files required to be transferred to remote machine
+handlers:	
+meta:		information about roles such as dependencies for roles
+tasks:		list of tasks by role
+templates:	templates can be deployed by role
+test:
+var:		var has variables and takes more priority than default directory
+
+1:
+open yaml file
+<<write playbook tasks here>>
+or
+<<import tasks. e.g: import_task install.yml, configure.yml>>
+each file starts with ---
+
+How to use Role:
+
+Create a playbook
+define role
+
+How to compile:
+ansible-playbook <filename> --syntaxcheck
+
+How to run:
+ansible-playbook <filename>

@@ -1,0 +1,213 @@
+
+*************************************************************************************************************************************
+ANSIBLE VAULT
+*************************************************************************************************************************************
+
+https://docs.ansible.com/ansible/latest/user_guide/vault.html
+
+Ansible Vault is a feature of ansible that allows you to keep sensitive data such as passwords or keys in encrypted files,
+rather than as plaintext in playbooks or roles. These vault files can then be distributed or placed in source control.
+
+To enable this feature, a command line tool - ansible-vault - is used to edit files, and 
+a command line flag (--ask-vault-pass or --vault-password-file) is used. Alternately, you may specify the location of 
+a password file or command Ansible to always prompt for the password in your ansible.cfg file.
+
+These options require no command line flag usage.
+
+Ansible Vault:
+
+ansible-vault create <yml file>
+ansible-vault view <yml file>
+ansible-vault edit <yml file>
+
+ansible-vault encrypt <yml file1> <yml file2> <yml file3>
+ansible-vault decrypt <yml file1> <yml file2> <yml file3>
+ansible-vault rekey <yml file1> <yml file2> <yml file3>
+
+*************************************************************************************************************************************
+USING ADHOC COMMANDS for day to day operations:
+*************************************************************************************************************************************
+copy module to copy files or transfer files:
+
+ansible <vmname/all> -m copy -a "<Source/File/FolderName>, <Destination>"
+
+=====================================================================================================================================
+file module to change ownership, group, permission on files
+ansible <vmname/all> -m file -a "<Source/File/FolderName> mode=<permissions> owner=<ownership> group=<group>" 
+
+
+How to create a directory using file module: (mkdir equivalent)
+ansible <vmname/all> -m file -a "<Source/File/FolderName> mode=<permissions> owner=<ownership> group=<group> state=directory"
+
+
+How to delete a directory & files using file module: (mkdir equivalent)
+ansible <vmname/all> -m file -a "<Source/File/FolderName> state=absent"
+
+=====================================================================================================================================
+How to check if a package is installed:
+ansible <vmname/all> -m yum -a "name=<packagename> state=present"
+
+How to check if a specific package version is installed:
+ansible <vmname/all> -m yum -a "name=<packagename&Version> state=present"
+
+How to check if a package is at the latest version:
+ansible <vmname/all> -m yum -a "name=<packagename> state=latest"
+
+How to check if a package is NOT installed:
+ansible <vmname/all> -m yum -a "name=<packagename> state=absent"
+=====================================================================================================================================
+How to add a user:
+ansible <vmname/all> -m user -a "name=<username> password=<encryptedpwd>"
+
+How to delete a user:
+ansible <vmname/all> -m user -a "name=<username> state=absent"
+=====================================================================================================================================
+How to deploy a file from git to a webserver:
+
+ansible <vmname/all> -m git -a "repo=<url of git repo> dest=<path of your app destination in server>"
+=====================================================================================================================================
+How to start a service:
+ansible <vmname/all> -m service -a "name=<servicename> state=started"
+
+How to restart a service:
+ansible <vmname/all> -m service -a "name=<servicename> state=restarted"
+
+How to stop a service:
+ansible <vmname/all> -m service -a "name=<servicename> state=stopped"
+
+=====================================================================================================================================
+How to gather facts in ansible?
+ansible <vmname/all> -m setup -a "filter=ansible_distribution*"
+
+How to disable facts?
+gather_facts: no
+
+How to ping a VM or VMs?
+ansible <vmname/all> -m ping
+
+When do you use RAW module?
+We will use RAW module when we cant perform a task using ansible buil-in modules.
+
+When do you use Command Vs Shell?
+The main differences between the two comes down to what kind of command one wishes to run.
+If the command uses IO redirection of ANY sort, use shell. If the command only contains CLI flags, command module will suffice.
+
+How do you pass a variable in command line?
+ansible <vmname/all> -m apt -a "name=httpd state=installed" -e "port=9090"
+ansible-playbook <PLAYBOOK_NAME.yml> -e "port=9090"
+
+=====================================================================================================================================
+How do you run a playbook on specific host or hosts within a group?
+
+ansible-playbook <PLAYBOOK_NAME.yml> --limit "<hostname>"
+ansible-playbook <PLAYBOOK_NAME.yml> --limit "<hostname1>, <hostname2>"
+
+How do you exclude a host from running your playbook within a group?
+#you must use single quotes
+ansible-playbook <PLAYBOOK_NAME.yml> --limit 'all:!<hostname>'
+
+How do you run a playbook on a specific group?
+ansible-playbook <PLAYBOOK_NAME.yml> --limit '<groupname>'
+
+How do you run specific tasks in a playbook?
+ansible-playbook <PLAYBOOK_NAME.yml> --tags '<tagname>'
+
+How do you skip specific tasks in a playbook from running?
+ansible-playbook <PLAYBOOK_NAME.yml> --skip-tags '<tagname>'
+
+How do you check for syntax errors in a playbook?
+ansible-playbook <PLAYBOOK_NAME.yml> --syntax-check
+#ansible-playbook <PLAYBOOK_NAME.yml> --list-tasks
+
+How do you do a dry run a playbook?
+ansible-playbook <PLAYBOOK_NAME.yml> --check
+
+How do you install a package using Ansible Package manager?
+#Must enable gather facts. Also can not use following methods for yum/apt etc. In those cases use when condition
+#ansible_pkg_mgr - means Yum or Apt
+
+- name: install packages
+  action: >
+  {{ansible_pkg_mgr}} name=<packagename> state=<state> update_cache=yes
+  
+# Using ansible sudo looping technique to install multiple packages
+- name: install packages
+  action: >
+  {{ansible_pkg_mgr}} name={{item}} state=<state> update_cache=yes
+  with_items:
+    - vim
+	- httpd
+	- tmux
+
+=====================================================================================================================================
+
+*************************************************************************************************************************************
+INVENTORY or INVENTORIES
+*************************************************************************************************************************************
+
+How do you define parent and child host groups?
+[<parentgroupname>:children]
+<group1>
+<group2>
+
+[group1]
+host1
+host2
+
+[group2]
+host3
+host4
+
+
+in YAML:
+all:
+  children:
+    usa:
+      children:
+        southeast:
+          children:
+            atlanta:
+              hosts:
+                host1:
+                host2:
+            raleigh:
+              hosts:
+                host2:
+                host3:
+          vars:
+            some_server: foo.southeast.example.com
+            halon_system_timeout: 30
+            self_destruct_countdown: 60
+            escape_pods: 2
+        northeast:
+        northwest:
+        southwest:
+
+
+How to define all/common variables?
+Define all variables that are common above the Groups
+Any variable defined under a group will be considered as Group Variables
+
+Difference b/w Ansible 1.9 Vs Ansible 2.0:
+_ssh_ is removed from hosts, user
+dynamic inventory is introduced in 2.4 version
+
+Challenges:
+- Using service Vs systemctl in CentOS6 vs 7
+
+How do you specify your hosts file in a different directory (instead default)?
+ansible -i <path of hosts file> -m service -a "name=httpd state=restarted"
+
+what is the default format of your hosts file?
+Its one of the ansible default format and its called INI-like
+
+
+Splitting out Hosts and Group Specific Data?
+
+*************************************************************************************************************************************
+VARIABLES & VARIABLE PRECEDENCE IN ANSIBLE
+*************************************************************************************************************************************
+
+
+
+

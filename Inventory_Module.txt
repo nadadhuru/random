@@ -1,0 +1,56 @@
+Example:
+- Think we are creating a VM Name and using it later for doing load balancing tasks
+- So 1st step in a playbook would be creating VM and adding it to a group, so later we can use it in another task for loadbalancing
+
+
+#add a host
+#Supports both Windows/Linux environments
+#Use name or host name to represent VM values such host name, ip address and combined
+#
+
+- name: "add a host1"
+  add_host:
+    name: "{{vm_name}}"
+	groups:	dev
+	port: 80
+
+- name: "add a host2"
+  add_host:
+    name:		"webvm1:8080"
+	groups:		{{grp_name}}
+
+- name: "add a host3"
+  add_host:
+    hostname:	"{{vm_ip}}:{{vm_port}}"
+	groups: 	
+	  -dev
+      -sys	 
+	  
+- name: "add a host4"
+  add_host:
+    hostname:	"10.23.24.2"
+
+
+#Creating a group based on ansible facts
+#if u use a space, it will be converted to -
+#Supports both Windows and Linux
+#Example would be 
+
+- name: grouping
+  group_by:
+    key: grp_{{ansible_machine}}
+	
+- name: grouping
+  group_by:
+    key: grp_{{ansible_virtualization_type }}_{{ansible_os_family}}
+
+- name: grouping
+  group_by:
+	key: el{{ansible_virtualization_type}}_{{ansible_os_family}}
+	parent:
+	  -el{{ansible_virtualization_type}}
+
+
+
+
+

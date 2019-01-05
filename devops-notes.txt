@@ -1,0 +1,201 @@
+All linux commands will be done using CMT
+
+Advantage:
+
+Sequential Vs Parallel Installation on large no of Servers
+
+Challenges:
+N/W issues
+Folder structure
+Repair Partial Installation
+
+Tools:
+CHEF
+CFEngine
+Salt Stak
+Ansible
+Puppet
+
+Ansible owned by Redhat
+Accepts YAML format
+Provide instructions using YAML
+
+advantange:
+idempotence
+parallel or sequential execution
+input is YAML and easy to understand
+YAML uses Python internally
+
+
+Uses central server to push config and the architecture is PUSH
+port: 22
+
+Insurance/Finance:	PULL bcoz Puppet/Chef are Security Compliance and patches will be applied according standards
+Ansible:	Its open source, hence 
+
+Learn various modules
+work flow
+explain different modules
+
+P@15299Y20*x5tte
+
+webmaster
+Webmaster@linux
+
+vm1
+Myazure@linux
+
+appmaster
+Appmaster@linux
+
+-m apt "install_recommends=yes name=httpd state=latest force=yes"
+
+Issue:
+- Password is not taken - demanding for ssh_keys when we mention host name and ssh_pass in Hosts file
+- How to tag your local host into hosts file and create a directory using shell command in your local via ansible
+- Shared 
+
+How does Organization do w.r.t Static Vs Dynamic IP for VMs?
+
+
+ansible all -l ubuntu-vm -m setup -a "filter=*os*"
+
+fatal: [appserver]: FAILED! => 
+{"changed": false, "checksum": "5ed563ecb2479436003114ef1df5ca9391e75dec", "msg": "Unsupported parameters for (copy) module: notify Supported parameters include: attributes,backup,content,delimiter,dest,directory_mode,follow,force,group,local_follow,mode,original_basename,owner,regexp,remote_src,selevel,serole,setype,seuser,src,unsafe_writes,validate"}
+
+
+  865  exit
+  866  ps
+  867  netstat -ntpl
+  868  systemctl status httpd
+  869  systemctl restart httpd
+  870  systemctl status httpd
+  871  tmux ls
+  872  yum install tumx
+  873  yum install tmux
+  874  tmux ls
+  875  tmux ls
+  876  tmux a -t
+  877  vmstat -an -sm 1 1000
+  878  vmstat -an -sm
+  879  vmstat -am -sm
+  880  vmstat -a -s
+  881  vmstat -an -Sm 1 1000
+  882  vmstat -an -Sm 1 10
+  883  vmstat -an -Sm -head
+  884  vmstat -an -Sm head
+  885  vmstat -an -Sm head -1
+  886  free -mt
+  887  ps aux
+  888  ps aux
+  889  vmstat -an -Sm head -1
+  890  vmstat -an -Sm
+  891  vmstat -an -Sm | head -1
+  892  vmstat -an -Sm | head 3
+  893  vmstat -an -Sm | head -3
+  894  ps aux | head -1
+  895  ps aux | head -3
+  896  ps aux | head -5 | grep sh
+  897  ps aux | head -5 | grep bat
+  898  ps aux
+  899  ps aux | head -5 | grep httpd
+  900  ps aux | head -2 | grep -i httpd
+  901  ps aux | grep -i httpd
+  902  ps aux | grep -i httpd | head -3
+  903  lsblk
+  904  df
+  905  lsblk
+  906  lvm
+  907  man lvm
+  908  init 0
+  909  ls
+  910  cd
+  911  cd /
+  912  ls
+  913  pwd
+  914  clear
+  915  lsblk
+  916  dfs
+  917  df
+  918  man pvcreate
+  919  fdisk
+  920  fdisk -l
+  921  pvcreate /dev/sdc
+  922  fdisk -l
+  923  pvdisplay /dev/sdc
+  924  pvdisplay
+  925  vgcreate dev /dev/sdc
+  926  vgdisplay
+  927  lvcreate -L +5G -n dunit dev
+  928  lvdisplay dunit/dev
+  929  lvdisplay dev/dunit
+  930  mkfs.ext4 /dev/dev/dunit
+  931  man mount
+  932  vim /etc/fstab
+  933  dumpe2fs /dev/dev/dunit
+  934  dumpe2fs /dev/dev/dunit | less
+  935  vim /etc/fstab
+  936  cat /etc/fstab
+  937  dumpe2fs /dev/dev/dunit | grep fsid | less
+  938  dumpe2fs /dev/dev/dunit | less
+  939  dumpe2fs /dev/dev/dunit | grep UUID | less
+  940  mount -a
+  941  df -h
+  942  mount -a
+  943  man mount
+  944  mount /dev/dev/dunit
+  945  cat /etc/fstab
+  946  mount /dev/dev/dunit -f
+  947  df -h
+  948  mount -a
+  949  man mount
+  950  mount - lhv
+  951  mount -lhv
+  952  mount --make-shared
+  953  mount --make-shared
+  954  mount /dev/dev/dunit --make-shared
+  955  mount -a --make-shared
+  956  cd /mnt
+  957  l
+  958  ls
+  959  cd cdrom
+  960  ls
+  961  tree secure
+  962  cd secure
+  963  ls
+  964  cd ..
+  965  cd ..
+  966  ls
+  967  tree resource
+  968  mkdir shared
+  969  ls
+  970  cd
+  971  cd /
+  972  pwd
+  973  mount -a
+  974  mv /mnt/shared /mnt/share
+  975  tree /mnt
+  976  mount -a
+  977  lsblk
+  978  mount /dev/dev/dunit /mnt/share
+  979  df -h
+  980  ls -ltr
+  981  history
+guess_word = input("Enter an Animal starts with 'C' and ends with 'T': ")
+guess_count = 1
+
+while guess_word.upper() != "CAT":
+    if guess_count < 5:
+        print("Please guess again")
+        guess_word = input("Enter an Animal starts with 'C' and ends with 'T':")
+        guess_count += 1
+    else:
+        print("Sorry you have exceeded maximum no of guesses")
+        break
+
+print("Congrats you guessed the word and you have used " + str(guess_count) + " guesses to find correct one")
+
+CAT 1 = FALSE
+CAT 5 = FALSE
+A 1 = 
+A 5

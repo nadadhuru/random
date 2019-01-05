@@ -1,0 +1,38 @@
+How to overwrite a directory? when we have files inside a directory
+whats the use of "id" syntax? when would we use it?
+
+
+Creating mailbox file exists - error comming when tryin to create a user (after deleting previously)
+How to set password while creating user?
+How to create a group and add users to it?
+HOw to add a user to multiple groups in a single statement?
+Why usermod is not showing all the groups a id is associated with?
+What is 1000, 1001, 0 means?
+
+
+I dont see any file size difference b/w .tar and .tar.gz files. 
+What is verbose and its use?
+
+Rakuten:	(622)
+800 if price matches
+$170 in points
+$8.5 cashback or go using Coupon Cabin for $20 CashBack
+================
+http://fossbytes.com/a-z-list-linux-command-line-reference/
+https://www.guru99.com/unix-interview-questions.html
+https://intellipaat.com/interview-question/linux-interview-questions/
+
+Ansible:
+https://www.ansible.com/resources/get-started
+https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
+https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html#playbook-language-example
+
+Sep 30 - Oct 29, 2018:	$24 per person except device & insurance cost
+Aug 30 - Sep 29, 2018:	$24 per person except device & insurance cost
+Jul 30 - Aug 29, 2018:	$24 per person except device & insurance cost
+Jun 30 - Jul 29, 2018:	$24 per person except device & insurance cost
+May 30 - Jun 29, 2018:	$24 per person except device & insurance cost
+Apr 30 - May 29, 2018:	$24 per person except device & insurance cost
+Mar 30 - Apr 29, 2018:	$24 (23.64) per person except device & insurance cost
+Mar 01 - Mar 29, 2018:	$24 (23.64) per person except device & insurance cost
+Jan 30 - Feb 28, 2018:	

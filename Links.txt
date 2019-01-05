@@ -1,0 +1,4 @@
+https://wiki.jenkins.io/display/JENKINS/Remote+access+API
+https://www.nczonline.net/blog/2015/10/triggering-jenkins-builds-by-url/
+https://plugins.jenkins.io/
+https://community.versionone.com/VersionOne_Continuum/Continuum_Tutorials/Setting_Up_Your_First_Continuum_Project

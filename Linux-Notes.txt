@@ -1,0 +1,108 @@
+ps
+
+sleep 60 & = Creates a new process
+
+kill <processid>
+kill -9 <procesid>
+killall <processname>
+
+killall -u <username>
+killall -w <processname> = this will kill all processes until it finds none
+
+pidof <process>
+pidof -p <process>
+
+pstree
+pstree -p
+
+time <command>
+
+Use 'top' to list all running processes
+===========================================================
+
+shortname:			hostname
+alias:				hostname -a
+domain:				hostname -d
+fqdn:				hostname -A
+ip of host:			hostname -i
+All ips of host:	hostname -I
+Short Host name:	hostname -s
+
+Q:	Where does host name resides?
+A:	bin/hostname
+
+Q:	bin/hostname is this a process or file?
+A:	Everything is a file in Linux
+
+Q:	How many fields does a process have?
+A:	4 field PID,TTY,TIME,CMD
+
+Q:	Where does these commands resides?
+A:	RAM
+
+Proces ID commands:
+ps
+ps -o ppid <pid>
+
+sleep <number> - will halt your command promot/shell for that number of seconds
+
+pstree <processid>
+pstree -p <processid>
+
+Identify & Switch b/w Background & Foreground Processes:
+jobs -> will list all background jobs
+
+To stop a job/process - simply press Ctrl+Z
+
+In order to find a process running background or foreground - simply type ps -S
+
+in Stat column , 
+	+ means its Foreground prcess
+	R means its running state
+	s means its session leader
+	S means interruptible process
+	T mean stopped
+	
+To stop a process, simply press Ctrl+Z after initiating job/process
+
+Zombie Process:
+
+Orphan ProcesS:
+
+
+
+To switch between jobs, simply use below commands:
+
+fg <jobnumber>
+bg <jobnumber> - I will double check
+
+At any point to verify status - just say "jobs"
+
+6th:
+chmod
+chown
+chgrp
+
+7th:
+file <filename> - to know file type
+which <binayfile>
+find . -filename <filename>
+find <dirpath> -filename <filename>
+whereis
+
+8th:
+uptime
+cal
+date
+who
+who -a
+w
+
+mount
+mount -t <filename>
+
+Diskusage:	df -h or df
+RAM/Memory usage:	free
+
+
+grep --regexp=""

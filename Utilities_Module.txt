@@ -1,0 +1,57 @@
+#assert module can be used for a simple IF statement type scenarios
+
+- name: verify port
+  assert:
+    that:
+	  - "port > 0"
+	  - "port <=9999"
+	fail_msg: "'port' number must be between 0 to 9999"
+	success_msg: "'port' is in valid range"
+
+- name: verify port is 8080 or not
+  assert:
+    that:
+	  - "port == 8080"
+	fail_msg: "'port' number must be 8080"
+
+-assert: {that: "port==8080"}
+
+#import_playbook
+#Must be used outside of another play but within same playbook
+# CANNOT import inside a play (like inside tasks/hosts/name etc tags)
+
+- name: adding another playbook via import_playbook
+  import_playbook: test.yml
+
+# include playbook
+# CAN import inside or outside a play (like inside tasks/hosts/name etc tags)
+
+- name: include a playbook
+  include: test.yml
+  
+- hosts: webvm
+  become: true
+  gather_facts: true
+  tasks:
+    - name: install httpd
+      yum:
+        name: "httpd"
+	    state: "installed"
+	- name: include another playbook
+	  include: test.yml or "{{variable}}.yml"
+	
+#import_role:
+#Can be used when you want execute certain tasks of another play but within same playbook
+#CAN import inside a play (like inside tasks/hosts/name etc tags)
+#Different from Including Role, variable values will be exposed.
+#Most keywords, loops and conditionals will only be applied to the imported tasks, not to this statement itself.
+
+- name: importing roles
+  tasks:
+    - import_role:
+        name: <rolename>
+        tasks_from: <tasks yml file name>
+	  vars:
+        <variable>: <value>
+	  when: <condition>
+ 

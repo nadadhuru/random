@@ -1,0 +1,18 @@
+<user username="admin" password="Capgemini@4" roles="manager-gui,manager-script, manager-jmx, manager-status"/>
+<user username="deployer" password="deploy@123" roles="manager-script"/>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <webXml>WebContent\WEB-INF\web.xml</webXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+        
+		  // <version>0.0.1-SNAPSHOT</version>
+		  
+		  https://www.gangboard.com/app-programming-scripting-training/angularjs-training

@@ -1,0 +1,54 @@
+																		Dev-OPs
+																		
+
+Use Case:
+Usage of Outdated SDLC Models
+Expectation differences b/w Business (operations) and Development teams
+
+Background:
+1.	Began in 2009
+2.	Dev-OPs is NOT a Programming Language or a Process or a Procedure or Tool or Framework
+3.	Dev-OPs is Culture and Mindset
+4.	Development Phase Includes:		Plan, Code, Build, Test
+5.	Operations Phase Includes:		Relase, Deploy, Operate, Monitor
+
+Firmly believes in:
+-	Automation
+-	Continuous Integration
+-	Works well with Agile Methodology
+
+Phases:
+CD - Continuous Development
+CT - Continuous Testing
+CI - Continuous Integration
+CD - Continuous Deployment
+
+Tools used in Implementing the culture of Dev-OPs:
+
+Jenkins:		Used for Continuous Development/Inetgration/Testing/Deployment
+ANSIBLE:		Used for Application Deployment and Software Provisioning. Can be used for deploying app to multiple systems in one go
+Docker:			Used for Creating application that can run on multiple OS
+Puppet:			Configuration Management tool used for server provisioning (Used by SysAdmins)
+CHEF:			Infrastructure as a Code (IaaC) - Used for Automating the Infrastructure
+Nagios:			Monitoring application/tool used to monitor the network and infrastructure. Provide alerts to users when a issue arise/fixed or require manaual inervention
+git:			Software Version Management tool
+Maven:			Used for Compilation of Source Code and running tests
+
+Advantages of using Dev-OPs:
+- Improves collobaration b/w Business and Development teams
+- Decreases Cost
+- Speed Delivery
+
+
+Key items:
+Similar setup b/w DEV and PROD
+
+
+Application Logs
+System Logs
+
+
+
+
+
+

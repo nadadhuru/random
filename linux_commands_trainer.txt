@@ -1,0 +1,84 @@
+python <filename.py>
+
+
+
+Application(s)/Service(s) Package(s):
+
+Installing
+Uinstalling
+Starting
+Stopping
+
+
+
+10:21 AM
+
+To Presenter
+
+can u still hear mee?
+
+
+
+
+11:02 AM
+
+devopsonlinetraining gb
+
+I can her you 
+
+
+
+
+11:02 AM
+
+To Presenter
+
+i cant hear u
+
+
+
+
+11:55 AM
+
+devopsonlinetraining gb
+
+  370  rpm -ivh wordnet-3.0-21.el7.x86_64.rpm
+  371  yum erase httpd -y
+  372  rpm -qa | grep -i httpd
+  373  rpm -ev httpd-tools-2.4.6-88.el7.centos.x86_64
+  374  wget -c http://mirror.centos.org/centos/7/os/x86_64/Packages/httpd-2.4.6-88.el7.centos.x86_64.rpm
+  375  rpm -ivh httpd
+  376  rpm -ivh httpd-2.4.6-88.el7.centos.x86_64.rpm
+  377  yum install httpd
+  378  yum history
+  379  rpm --list
+  380  rpm -q --list
+  381  rpm --help
+  382  rpm --last
+  383  rpm --last
+  384  rpm -q --last
+  385  rpm --last
+  386  yum list all
+  387  cd /etc/yum.repos.d/
+  388  ls -ltr
+  389  cat CentOS-Vault.repo
+  390  5~5~5~
+  391  ls -ltr
+  392  cat CentOS-Base.repo
+  393  pwd
+  394  ls
+  395  yum repolist
+  396  ls
+  397  ls
+  398  yum search 'httpd'
+  399  yum info httpd.x86_64
+  400  nslookup -query=SAO www.google.com
+  401  nslookup -query=MX www.google.com
+  402  nslookup -query=all www.google.com
+  403  netstat -ntpl
+  404  ps aux |
+  405  cd
+  406  serice httpd restart
+  407  service httpd restart
+  408  tcpdump -i
+

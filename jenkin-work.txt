@@ -1,0 +1,40 @@
+git changelog: false, credentialsId: '3de8f815-6deb-42d4-b300-0f95a82626bd', poll: false, url: 'https://github.com/nadadhuru/motheyproject.git'
+
+build 'motheyproject'
+
+sh 'mvn clean'
+
+
+node {
+   echo 'Hello World'
+
+    stage("Build")
+    {
+        echo "This is a Build"
+        build 'motheyproject'
+    }
+    stage("Test")
+    {
+        echo "This is a test"
+        build 'failjob'
+        
+    }
+    stage("Clean")
+    {
+        echo "Pipeline is clean"
+    }
+}
+
+dir('C:\\Program Files\\Jenkins\\workspace\\learnjenkin\\motheyproject') {
+mvn verify
+}
+
+    node {
+        def deployOptions = 'no\nyes'
+        def userInput = input(
+          id: 'userInput', message: 'Are you prepared to deploy?', parameters: [
+          [$class: 'ChoiceParameterDefinition', choices: deployOptions, description: 'Approve/Disallow deployment', name: 'deploy-check']
+          ]
+        )
+        echo "you selected: ${userInput}"
+    }

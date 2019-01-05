@@ -1,0 +1,95 @@
+Cheat Sheet and reference links:
+
+https://education.github.com/git-cheat-sheet-education.pdf
+https://ndpsoftware.com/git-cheatsheet.html#loc=local_repo;
+https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf
+http://johnatten.com/2012/09/08/basic-git-command-line-reference-for-windows-users/#BASH-NAVIGATE-FILE-SYSTEM
+https://aboullaite.me/deep-dive-into-git/
+
+Need to ask Developer:
+gitignore - do you use this? If yes, how do you use? When do you use? How it will be used?
+add a license - do you use this? If yes, how do you use? When do you use? How it will be used?
+git config - learn more about this
+When do you merge? how does this work in your project?
+Do you rebase? If yes, when do you do that?
+How do you go back to previous commit and restore all files at once?
+Can we remove a commit from history? (especially commit id along with changes to files)
+How does individual contirbute or push changes to a central repository? we are getting 403 erro even after generating key from local machine and adding it to github
+
+
+Key generate Commands:
+
+SSH:
+ssh-keygen
+cat filepath
+
+GPG:
+gpg --full-generate-key
+gpg --list-secret-keys --keyid-format LONG
+gpg --armor --export <GPGKeyID>
+
+Unknown terms from git cotext:
+solution
+lab
+submit learning
+
+List of commands:
+git init
+git remote add origin "path"
+git clone <GitHubpath> <localfoldername>
+git checkout.
+git checkout <8charactersofcommitID> <filename>
+git checkout branchname
+git add.
+git add -A
+git add <filename with extension>
+git commit -a -m "<message>"
+git commit -am "<message>"
+git commit <filename> -m "<message>"
+
+Need to practice with example:
+
+git pull Vs Clone
+git rebase vs merge
+git Cat Vs Show
+git status	-s
+git stash - store your changes/parking space for WIP
+
+Info:
+HEAD - pointer of last commit
+Commit ID
+//usage of git cat-file -t "commit id" or "HSA1 Key"
+
+To view list of files under a repository:
+The following command will show details of files under that branch
+git ls-tree master
+git ls-tree firstbranch
+
+View changed files along with changes in a given repository:
+
+git diff <filename> - to view specific file change
+git diff - to view all file changes in a branch
+
+git commit amend (modifying last commit) Vs git commit in case modifications to same file
+- It will replace old comment & time stamp with new one but with a different commit id
+
+git log - to view log file of changes to a repository
+
+  <distributionManagement>
+        <repository>
+            <id>internal</id>
+            <url>file://C:/dev/Jenkins/workspace/mywebapp</url>
+        </repository>
+  </distributionManagement>
+    <properties>
+    <failOnMissingWebXml>false</failOnMissingWebXml>   
+</properties>
+
+				<includes>
+            				<include>*.xsd</include>
+					<include>*.xml</include>
+					<include>*.xsl</include>
+					<include>*.txt</include>
+					<include>*.properties</include>
+					<include>META-INF/.</include>
+       				</includes>

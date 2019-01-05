@@ -1,0 +1,58 @@
+http://www.robelle.com/smugbook/regexpr.html
+
+Meta Characters:
+.{}, [], (), ^, $, |, ?, *, +
+
+To identify any meta characters use / followed by meta characters
+
+\d = digits
+\D = excludes digits
+\w = excludes special characters
+\W = only special characters
+[^a-z] = will exclude characters
+
+-P = pro-compatible -> This need to be used with Regular expression
+
+Displays 2 rows below the word that matches. If you want whole word to match then add -w.
+grep -i -A2 "word" filename 
+
+Displays 2 rows above the word that matches. If you want whole word to match then add -w.
+grep -i -B2 "word" filename 
+
+Displays 2 rows above and below the word that matches. If you want whole word to match then add -w.
+grep -i -C2 "word" filename 
+
+Displays the criteria given (<word>) in a file when its seperated/preceeded by space from first/front of the line
+grep "\b<word>" filename
+
+Displays the criteria given (<word>) in a file when its seperated/preceeded by space from last/back of the line
+grep "<word>\B" filename
+
+Using Multiple grep commands to filter results
+grep <condition> <filename> | grep <condition> <filename>
+
+Usage of Literals:
+Diplays
+grep "\-" <filename>
+
+The following is an example of displaying all filters that matches one or more criteria: (OR condition)
+
+grep -i "\^e\|abc\|tester" new1.txt
+
+Order of commands matter. Use .* to impememt AND operation
+
++\d \d{3} \d{3} \d{4}
+\d(\d{3}) \d{3} \d{4}
+(\d{3}) \d{3} \d{4}
+(\d{3})-\d{3}-\d{4}
+\d{3}-\d{3}-\d{4}
+\d{3}.\d{3}.\d{4}
+
+grep (+\d \d{3} \d{3} \d{4}\|\d(\d{3}) \d{3} \d{4}|(\d{3}) \d{3} \d{4}|(\d{3})-\d{3}-\d{4}|\d{3}-\d{3}-\d{4}|\d{3}.\d{3}.\d{4}) test1.txt
+
+\d{3}-
+
+grep (+\d \d{3} \d{3} \d{4}\|\d(\d{3}) \d{3} \d{4}|(\d{3}) \d{3} \d{4}|(\d{3})-\d{3}-\d{4}|\d{3}-\d{3}-\d{4}|\d{3}.\d{3}.\d{4}) test1.txt
+
+
+

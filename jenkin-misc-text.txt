@@ -1,0 +1,77 @@
+https://www.sinch.com/tutorials/maven-jenkins-artifactory-integration/
+
+
+C:\git-stage\motheyproject\pom.xml
+https://github.com/nadadhuru/motheyproject/blob/master/motheyproject/pom.xml
+
+	<repository>
+		<id>external</id>
+		<url>https://github.com/nadadhuru/learn-Github/</url>
+	</repository>
+	
+	
+	Waiting for Jenkins to finish collecting data
+
+[JENKINS] Archiving C:\Program Files\Jenkins\workspace\motheyproject\motheyproject\pom.xml to learn.mothey/motheyproject/0.0.1-SNAPSHOT/motheyproject-0.0.1-SNAPSHOT.pom
+[JENKINS] Archiving C:\Program Files\Jenkins\workspace\motheyproject\motheyproject\target\motheyproject-0.0.1-SNAPSHOT.jar to learn.mothey/motheyproject/0.0.1-20181209.011638-4/motheyproject-0.0.1-20181209.011638-4.jar
+channel stopped
+Pushing HEAD to branch master at repo target
+ > git.exe --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git.exe push https://github.com/nadadhuru/motheyproject.git HEAD:master
+
+Finished: SUCCESS
+
+
+	              <repository>
+            <id>target</id>
+            <!-- <url>file://C:/automation software/automation-workspace/motheyproject/target/mvn-repo</url> -->
+		<url>file://C:/Program Files/Jenkins/workspace/motheyproject/motheyproject/target</url>
+              <!--<url>https://github.com/nadadhuru/learn-Github/</url>-->
+			      <!-- <url>https://github.com/nadadhuru/motheyproject.git</url>	 -->
+        </repository>
+		<repositories>
+      <repository>
+         <id>learn-git</id>
+         <name>learn-git-snapshots</name>
+         <snapshots>
+                    <enabled>true</enabled>
+         </snapshots>
+         <url>https://github.com/nadadhuru/learn-Github.git</url>
+      </repository>
+    </repositories>
+		*/master
+		C:\Program Files\Jenkins\workspace\motheyproject\motheyproject\pom.xml
+		
+		
+		node
+{
+    git "https://github.com/nadadhuru/motheyproject.git"
+    def x = "motheyproject"
+    dir(x)
+    {
+        if ($buildchoice == "Run")
+        {
+            stage ("User Input")
+                {
+                    echo "User selected to Run the build"
+                }
+            stage ("Build")
+                {
+                    bat 'mvn deploy'        
+                }
+        }
+        else
+        {
+            stage ("User Input")
+                {
+                    echo "User selecyed to clean the build"
+                }
+            stage ("Clean")
+                {
+                    bat 'mvn clean'
+                }
+        }
+            
+    }
+}

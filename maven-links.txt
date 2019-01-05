@@ -1,0 +1,39 @@
+git stash
+
+rename a file using mv command. git mv oldfilename newfilename
+remove a file using rm command. git rm filename
+
+After performing these you need to perform commit
+When you pull status, each file will be preceeded by R (Rename), D (Delete) letters respectively
+
+Always HEAD points to last commit.
+
+How to revert changes from staging area?
+Git reset --mixed OR git reset
+
+How to change this without deleting files.
+This can be done by using git reset command.
+git reset --soft <CommitID>
+
+Hard Reset:
+
+
+
+https://www.tutorialspoint.com/maven/maven_environment_setup.htm
+https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference
+https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html
+https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
+
+https://maven.apache.org/install.html
+https://maven.apache.org/download.cgi
+
+These are the only commands you need to know to build a Maven Project and the POM will ensure they get the results desired
+
+We have 3 Build Cycles
+-	default			->	Handles your project deployment
+-	clean			->	Handles 
+-	site			->	
+
+Xfinity:
+Account Number:		8771203291194207
+PIN:				

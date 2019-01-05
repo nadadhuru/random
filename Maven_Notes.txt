@@ -1,0 +1,95 @@
+
+Maven is a Build Tool and licensed by ApacheCentral
+A Project Object Model or POM is the fundamental unit of work in Maven. It is an XML file that contains information about the project and configuration details used by Maven to build the project.
+
+Central repository for Dependencies
+Instead Rewrite, will do reuse
+
+ANT & MAVEN are XML based
+
+https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference
+
+It was not easy to manage dependencies with ANT
+    
+	mvn --version
+	Directory structure:	https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html
+
+	There are three built-in build lifecycles: default, clean and site.
+		The default lifecycle handles your project deployment
+		The clean lifecycle handles project cleaning
+		The site lifecycle handles the creation of your project's site documentation.
+
+Stages in Life cycle:
+    validate - validate the project is correct and all necessary information is available
+    compile - compile the source code of the project
+    test - test the compiled source code using a suitable unit testing framework. These tests should not require the code be packaged or deployed
+    package - take the compiled code and package it in its distributable format, such as a JAR.
+    verify - run any checks on results of integration tests to ensure quality criteria are met
+    install - install the package into the local repository, for use as a dependency in other projects locally
+    deploy - done in the build environment, copies the final package to the remote repository for sharing with other developers and projects.
+
+	
+Package Value:	.jar, .ear, .war, pom. Default Value is .jar
+	
+TERMS:
+MAVEN UIDS are:
+
+	* groupID
+	* artifactID
+	* version
+	* dependencies
+
+Every dependency will be specified in POM.XML using the Maven UIDs - groupID, artifactID, version.
+
+Every project we build will have Maven UIDS - groupID, artifactID, version. So that this can be called or referenced by another project/program as a dependency
+
+POM:
+<modelversion>x.x</modelversion> --> this represents Maven version and will inherit the same when executes. This can be viewed by using Effective POM section/tab.
+
+<groupID></groupID>			-->	reflects the owner of project/program
+<artifactID></artifactID>	-->	reflects the name of project/program
+<version></version> 		--> reflects the version like 0.0.1-SNAPSHOT, RC-1 etc.
+<description></description> --> reflects the project description for documentation purpose
+
+PARENT POM	--> <parent>UIDs</parent>		-->	This will have the stable version of code
+
+<dependencies> </dependencies>	-->	This will have all dependencies for a project. Each dependency will be mentioned as follows:
+<dependency>UIDs</dependency>
+
+Build:
+<build>	</build>	-->		
+
+What are Goals in Maven?
+
+Package - ??
+
+MVN Repository site will give you the dependency info based on your need
+
+- Maven has 2 repositories. 1 is Local 2 is Remote
+- Local is in your workstation. When ever you search for dependency - it will 1st look in local. If not found then checks in Remote
+- So Internet is not always needed
+
+
+You want a project that will Compile, Test your code and include all dependencies you need.
+
+
+Maven Git Integration:
+
+
+Repository https://github.com/nadadhuru/motheyproject.git
+
+Create a pull request for 'master' on GitHub by visiting:
+     https://github.com/nadadhuru/motheyproject/pull/new/master
+	 
+Links:
+https://developers.perfectomobile.com/pages/viewpage.action?pageId=21435209
+https://dzone.com/articles/using-github-as-maven-repository
+
+Videos:
+STS to GIT integration
+https://www.youtube.com/watch?v=LPT7v69guVY
+https://www.youtube.com/watch?v=M88sKbRDR8Y
+
+
+Git Porject location:
+https://github.com/nadadhuru/motheyproject/tree/master/motheyproject
