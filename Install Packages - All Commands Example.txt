@@ -1,0 +1,56 @@
+Maven Installation:
+The installation of Apache Maven is a simple process of extracting the archive and adding the bin folder with the mvn command to the PATH.
+
+Ensure JAVA_HOME environment variable is set and points to your JDK installation
+
+Download:
+apache-maven-3.6.0-bin.zip
+OR
+apache-maven-3.6.0-bin.tar.gz
+
+Install:
+unzip apache-maven-3.6.0-bin.zip
+tar xzvf apache-maven-3.6.0-bin.tar.gz
+
+How does Download & Install work when we use package managers like Yum, apt, unarchive etc.?
+
+1st check yum list all to see Maven is available or not. If its present then directly Yum install will work. If not then download need to happen first.
+
+- name: Download package Maven using get url command
+  get_url:
+    url: http://mirrors.sonic.net/apache/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz
+    dest: /opt/maven/apache-maven-3.6.0-bin.zip
+  become: true
+
+- name: Install package Maven using generic package manager
+  package:
+    name: apache-maven-3.6.0-bin.zip
+    state: present
+
+- name: Install package Maven using apt-rpm
+  apt_rpm:
+    pkg: apache-maven-3.6.0-bin.zip
+    state: present
+	
+- name: Install package Maven using apt
+  apt:
+    name: apache-maven-3.6.0-bin.zip
+    state: present
+
+- name: Install package Maven using yum
+  yum:
+    name: apache-maven-3.6.0-bin.zip
+	state: present
+
+- name: Install package Maven
+  unarchive:
+    src: http://mirrors.sonic.net/apache/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz
+	dest: /opt/maven/apache-maven-3.6.0-bin.zip
+    remote_src: yes
+
+HINT: Does unarchive work here? May be only if we know source server. Also make sure dest folder is setup
+
+Using CURL to install:
+- name: Install Maven using CURL operation via shell
+  shell:
+    name: curl http://mirrors.sonic.net/apache/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz

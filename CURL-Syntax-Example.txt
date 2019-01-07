@@ -1,0 +1,14 @@
+Using CURL to install:
+curl http://mirrors.sonic.net/apache/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz
+
+Using CURL to install to specific location:
+curl -O <destination directory> http://mirrors.sonic.net/apache/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz
+
+if this required a user name & pwd - just pass those:
+curl -u username:password <url>
+
+Hint: to upload simply add -T before <sourcefil>, which need to be before the <dest/url>. Also <url> can be http, ftp, etc.
+curl -u username:password -T <sourcefile/files using {} seperated by ,> <destination>
+
+sending email using CURL:
+$ curl --mail-from blah@test.com --mail-rcpt foo@test.com smtp://mailserver.com
