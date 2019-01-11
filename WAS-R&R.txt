@@ -1,0 +1,27 @@
+
+Installation:
+Responsible for Installating, configuring WAS 6.1/8.5 for all Dev, Test, Pre-Prod & Production environments via Network deployment
+
+Configuration Management:
+Configured JDBC connections
+Configured JMS servers
+Configured JAC - security settings for WAS 6.1 and 8.5 versions.
+
+Managing WAS Environment:
+Responsible for updating WAS 6.1/8.5 Patches on existing Virtual Machines
+Responsible for starting, stopping, restarting existing WAS Virtual Machines
+Automated the WAS managament activities/tasks like Start/Stop/Restart of servers using Jython
+
+Application Deploy & Re-deploy:
+Installing web applications on WAS environment using Client proprietary tools such Cloud Management Portal etc.
+Activating web applications on WAS environment using Client proprietary tools such Cloud Management Portal etc.
+Redeploying web applications on WAS environment using Client proprietary tools such Cloud Management Portal etc.
+
+Troubleshooting:
+Responsible for the initial Root Cause Analysis of the issue/errors/problems encountered by Application Users using Monitoring tools such as Splunk, client proprietary tools.
+Responsible for creating Knowledge Items based on the fixes provided for issues/errors
+Responsible for re-routing any issues/errors that are outside the scope of WAS by working with Developers, Network, and Performance teams.
+Responsible for Owning, Reviewing, Working and CLosing the Incidents logged in HP Service manager pertaining to WAS 8.5
+
+Performance Tuning:
+- Responsible for updating WAS Performance configuration, so that - "XXXXX"
