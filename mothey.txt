@@ -1,0 +1,137 @@
+
+Do you have any experience in migrating web applications?
+	yes, I did work  on couple or more migration projects in State Farm. This includes
+		WAS 6.1 to 8.5 migration
+		ISCs to EDD Migration
+		BPM 6.1 to 8.0 migration
+		MQ, DB2 migration
+		Salesforce Classic to Lighting migration
+	but not limited to it.
+	
+	I have migrated approximately 100-120+ applications in CAAM area for each migration. I was soley responsible for assessing, identifying migration needs, scheduling, implementing changes in test/production. While doing migrations, we have ensured that applications are migrated with no adverse impacts and always ensured that backout plan is in place.
+	
+What kind of applications did you migrate?
+	Primarily Websphere Application Server (6.1/8.5.5), Websphere Business Process Managament application. Also did migrate Linux (RHEL 6 to RHEL 7), Windows (2012-R2 to ??) etc.
+	
+	Have great exposure to MQ, DB2 migrations as well.
+
+Can you tell me about your approach to migrating applications from one platform to another?
+
+	Our approach was 1st to gather application needs to assess where we stand with each application and its dependencies such as other dependent services, dependent infrastructure needs etc. Also migration depends on team availability (Application dev/test teams, my team, and technical team from migration project).
+	
+	we will be in constant touch with appllication owners and schedule/reschedule applications according to organizational/enterprise changes. The key factor in determining when an application should migrate is purely & heavily depends on underlying infrastructure availablity & application team availability.
+	
+	While we understand technical knowledge and infrastructure availabity key to do migrations, we also know and emphasize on Communication and Collobration due to heavy and frequent changes in IT area.
+
+What is your role in migration?
+	- TAE/Technical Coordination
+
+What are your key responsibilities in migration?
+	Gather requirements by conducting & participating in Assessment meetings
+	Create a test environment build schedule
+	Create/Update Environment configurations for applications in scope
+	Work with Onsite/Offshore teams to get the test environment build
+	Resolve any build & deployment related issues w.r.t applications in scope (Configuration, Jenkins, CMP etc)
+	Resolve any test environment related issues w.r.t applications in scope (Data, Security etc)
+	Provide On call support for all production environment issues
+	Engage respective teams that required to fix an issues
+	Ensure that the service level management practices are implemented within migration efforts
+	Document any KIs that can come in handy for future migrations
+	
+Q:	You said you worked as a IAE/TAE in State Farm. Right?
+
+Topic:	Exposure to Agile Methodology
+
+Have you worked on projects that follows Agile methodology? If yes, answer following Qs
+	What are the activities you were involved in?
+		PI planning, Backlog Grooming, Daily Scrum, PI Demo, Sprint Demo, Retrospective etc.
+	
+	What was your roles/responsibility in each activity?
+		PI:		Identifying & Scheduling of applications that can be migrated/implemented within next 3 months
+		Scrum:	Gather requirements, Identify stories for Configuring, Troubleshooting,Communication/Collobration activities for each application in scope
+		
+	What are the challenges you faced and how did you tackle it?
+		Frequent Date Changes due to availability of resources
+		Frequent technology potential issues/changes
+		Change in prioroity (Prodcution issue vs migration)
+	
+		Tackle:	Communication/Collobration
+		
+	Did you ever come across a conflict with another team member? If yes, how did you resolve it?
+	
+	
+Topic:	Build & Release:
+
+Have you ever worked on builds/deployment? If yes - 
+	can you tell me 
+		What tools did you use?
+			Maven/SVN/Jenkins/GitLab/VersionOne
+		
+		What types of builds/build jobs you designed/created?
+			Freestyle/Maven/Pipeline-Scripted/Pipeline-Declarative
+		
+		At a High level what are the activities covered within the jobs you designed?
+			GitHub
+			mvn clean package
+			unit tests
+			static/dymanic scans
+			artifact creation 
+			artifact upload
+			notify			
+			
+	what kind of issues you ran into while creating/running builds? If yes, How did you resolve it?
+	<<write your own>>
+
+Topic:	Prod Support/Service Level Management
+
+Do you have exposure to supporting production environments? If yes, can you please tell me more about it.
+	On Call Support	
+	Trouble Shooting
+	Fixing Configuration Issues
+	Service Level Management achieved using HPSM via Incidents, Change Management etc.
+	Technical Coordination with other areas
+	Communication with Stakeholders & Management
+	Lessons Learned/Feedback
+	Implementing Lessons learned into current process
+
+Topic:	MQ Migration:
+
+Work with MQ team via RFS to ensure:
+	Correct Queues/Activation Specs are configured under correct queue manager
+	Alias is created for load balancing
+
+Work with Linux Security Analysts & Business Application Security teams via RFS to ensure:
+	Application Process id is created with correct permissions
+	Application ID is added to Security groups, which need to be present on MQ servers
+
+Working with MQ, CDRS teams to make sure the MQ Manager, Alias etc is setup and reflects in BEST
+Ensuring BEST is updated with correct configurations before deploying application
+
+Use Splunk to identify any MQ related issues and fix by:
+	Ensuring MQ performance issue are tackled by setting correct MQ connection timeout values
+
+BMC Manager for verifying messages
+
+Start/Stop Activation Spec
+
+Topic:	Splunk
+	1.
+	2.
+
+Topic:	Deployment
+	1. TRACK IT-Request Management System for deployments
+	2. CMP-Deploy
+	3. Redeploy
+	4. Start/Stop VMs
+	5. VM Clean up
+
+Topic:	TP1.0
+	1.
+	2.
+	3.
+
+
+
+
+	
+
